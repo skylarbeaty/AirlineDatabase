@@ -13,6 +13,7 @@ body{
 }
 .header {
     background: #83bcff;
+    border-left: 0px;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 50px;
@@ -25,8 +26,8 @@ body{
 }
 .table ul{
     padding: 0;
+    margin: 0;
 	list-style: none;
-    padding-top: 20px;
 }
 .table ul li{
     padding-right: 20px;
