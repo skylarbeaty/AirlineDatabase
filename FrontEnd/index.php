@@ -1,15 +1,5 @@
 <?php
-$dbPort = "3306"
-$dbServername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbName = "airline";
-
-$conn = new mysqli($dbPort, $dbServername, $dbUsername, $dbPassword, $dbName);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+    include_once 'connection.php';
 ?>
 <html>
 <head>
@@ -59,10 +49,10 @@ echo "Connected successfully";
             </form>
         </div>
         <div class="col-lg-4">
-            <p style="padding-top: 50px;">Search results will display here. <?php echo date('l, F jS, Y'); ?></p>'
+            <p style="padding-top: 50px;">Search results will display here.</p>
             
                 <?php
-                    include_once 'connection.php';
+                    
 
                     $sql = "SELECT flight_no FROM flight";
                     $result = $conn->query($sql); 
