@@ -30,5 +30,34 @@
         </div>
         <div class="col-lg-3 col-sm-0"></div>
     </div>
+    <div class = "row">
+        <div class="col-lg-3 col-sm-0"></div>
+        <div class="col-lg-6">
+            <h2 style="padding-top: 50px; padding-bottom: 20px;">Add A Flight</h2>
+            <form action="" method="POST">
+                <label>Flight Number</label>
+                    <input type="text" name="flight_no"><br/>
+                <label>Desitination City</label> 
+                    <input type="text" name="destination_city"><br/>
+                <label>Departure City</label>
+                    <input type="text" name="departure_city"><br/>
+                <label>Departure Time</label> 
+                    <input type="time" name="departure_time"><br/>
+                <label>Arrival Time</label> 
+                    <input type="time" name="arrival_time"><br/>
+                <label>Boarding Time</label> 
+                    <input type="time" name="boarding_time"><br/>
+                <label>Total Passengers</label> 
+                    <input type="number" name="total_passenger"><br/>
+                <label>Total Seats</label> 
+                    <input type="number" name="total_seats"><br/>
+                <label>Distance</label> 
+                    <input type="number" name="distance"><br/>
+                <label>Departure Date</label> 
+                    <input type="date" name="departure_date"><br/><br/>
+                <input type="submit">
+            </form>
+        </div>
+        <div class="col-lg-3 col-sm-0"></div>
 </body>
 </html>
