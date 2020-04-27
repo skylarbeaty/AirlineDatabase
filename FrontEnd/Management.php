@@ -32,7 +32,7 @@
     </div>
     <div class = "row">
         <div class="col-lg-3 col-sm-0"></div>
-        <div class="col-lg-6">
+        <div class="col-lg-3">
             <h2 style="padding-top: 50px; padding-bottom: 20px;">Add A Flight</h2>
             <form action="" method="POST">
                 <label>Flight Number</label>
@@ -55,6 +55,13 @@
                     <input type="number" name="distance"><br/>
                 <label>Departure Date</label> 
                     <input type="date" name="departure_date"><br/><br/>
+                <input type="submit">
+            </form>
+        </div>
+        <div class="col-lg-3">
+            <h2 style="padding-top: 50px; padding-bottom: 20px;">Remove A Flight</h2>
+            <form action="" method="POST">
+                <label>Flight Number</label> <input type="text" name="flight_no"><br/>
                 <input type="submit">
             </form>
         </div>
