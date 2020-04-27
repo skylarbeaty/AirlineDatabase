@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+    include_once 'connection.php';
+?>
+<html>
 <head>
     <link rel="stylesheet" href="main.css"> 
     <!-- fonts: montserrat, alegreya --> <link href="https://fonts.googleapis.com/css?family=Alegreya|Montserrat|Indie+Flower" rel="stylesheet">
@@ -19,12 +22,28 @@
             </div>
             <div class="table" >
                 <ul>
-                    <li><a href="index.html"><p>Search</p></a></li>
-                    <li><a href="MyAccount.html"><p>My Account</p></a></li>
-                    <li><a href="#"><p class="currentPage">Management</p></a></li>
+                    <li><a href="Search.php"><p>Search</p></a></li>
+                    <li><a href="#"><p class="currentPage">My Account</p></a></li>
+                    <li><a href="Management.php"><p>Management</p></a></li>
                 </ul>
             </div>
         </div>
         <div class="col-lg-3 col-sm-0"></div>
     </div>
+    <div class = "row">
+        <div class="col-lg-3 col-sm-0"></div>
+        <div class="col-lg-6" style="padding-top: 20px;">
+            <p>Name: <br/></p>
+            <p>DOB: <br/></p>
+        </div>
+        <div class="col-lg-3 col-sm-0"></div>
+    </div>
+    <div class = "row">
+        <div class="col-lg-3 col-sm-0"></div>
+        <div class="col-lg-6">
+            <p>Purchased flight ticket information will show here</p>
+        </div>
+        <div class="col-lg-3 col-sm-0"></div>
+    </div>
 </body>
+</html>

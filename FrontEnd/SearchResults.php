@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <head>
     <link rel="stylesheet" href="main.css"> 
     <!-- fonts: montserrat, alegreya --> <link href="https://fonts.googleapis.com/css?family=Alegreya|Montserrat|Indie+Flower" rel="stylesheet">
@@ -19,9 +19,9 @@
             </div>
             <div class="table" >
                 <ul>
-                    <li><a href="index.html"><p>Search</p></a></li>
-                    <li><a href="#"><p class="currentPage">My Account</p></a></li>
-                    <li><a href="Management.html"><p>Management</p></a></li>
+                    <li><a href="#"><p class="currentPage">Search</p></a></li>
+                    <li><a href="MyAccount.php"><p>My Account</p></a></li>
+                    <li><a href="Management.php"><p>Management</p></a></li>
                 </ul>
             </div>
         </div>
@@ -29,17 +29,31 @@
     </div>
     <div class = "row">
         <div class="col-lg-3 col-sm-0"></div>
-        <div class="col-lg-6" style="padding-top: 20px;">
-            <p>Name: <br/></p>
-            <p>DOB: <br/></p>
-        </div>
-        <div class="col-lg-3 col-sm-0"></div>
-    </div>
-    <div class = "row">
-        <div class="col-lg-3 col-sm-0"></div>
         <div class="col-lg-6">
-            <p>Purchased flight ticket information will show here</p>
+            <?php
+
+            include_once 'connection.php';
+
+            $departure_city = $_POST['departure_city'];
+            $destination_city = $_POST['destination_city'];
+            $date = $_POST['departure_date'];
+    
+            $sql = "SELECT * FROM flight WHERE departure_city = '$departure_city' AND destination_city = '$destination_city'";
+            $result = $conn->query($sql); 
+
+
+            if ($result && $result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "flight number:" . $row["flight_no"].  "<br>";
+                }
+            } else {
+                echo "No results found";
+            }
+            
+            ?>
         </div>
         <div class="col-lg-3 col-sm-0"></div>
-    </div>
+
 </body>
+</html>

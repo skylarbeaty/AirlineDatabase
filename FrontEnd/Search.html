@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
     include_once 'connection.php';
-?>
+?> -->
 <html>
 <head>
     <link rel="stylesheet" href="main.css"> 
@@ -23,8 +23,8 @@
             <div class="table" >
                 <ul>
                     <li><a href="#"><p class="currentPage">Search</p></a></li>
-                    <li><a href="MyAccount.html"><p>My Account</p></a></li>
-                    <li><a href="Management.html"><p>Management</p></a></li>
+                    <li><a href="MyAccount.php"><p>My Account</p></a></li>
+                    <li><a href="Management.php"><p>Management</p></a></li>
                 </ul>
             </div>
         </div>
@@ -32,46 +32,17 @@
     </div>
     <div class="row">
         <div class="col-lg-3 col-s-0"></div>
-        <div class="col-lg-2">
+        <div class="col-lg-6">
             <h2 style="padding-top: 50px; padding-bottom: 20px;">Search for a flight</h2>
-            <form action = "select.php" >
-                <label>Flight Number</label><br/>
-                <input type="text"><br/>
+            <form action="SearchResults.php" method="POST">
                 <label>Departure City</label><br/>
-                <input type="text"><br/>
-                <label>Arrival City</label><br/>
-                <input type="text"><br/>
-                <label>Departure Date</label><br/>
-                <input type="date"><br/>
-                <label>Boarding Time</label><br/>
-                <input type="time"><br/><br/>
+                <input type="text" name="departure_city"><br/>
+                <label>Arrival City</label> <br/>
+                <input type="text" name="destination_city"><br/>
+                <label>Departure Date</label> <br/>
+                <input type="date" name="departure_date"><br/><br/>
                 <input type="submit">
             </form>
-        </div>
-        <div class="col-lg-4">
-            <p style="padding-top: 50px;">Search results will display here.</p>
-            
-                <?php
-                    
-
-                    $sql = "SELECT flight_no FROM flight";
-                    $result = $conn->query($sql); 
-
-
-                    if ($result && $result->num_rows > 0) {
-                        // output data of each row
-                        while($row = $result->fetch_assoc()) {
-                            echo "flight number:" . $row["flight_no"].  "<br>";
-                        }
-                    } else {
-                        echo "No results found";
-                    }
-
-
-                    $conn->close();
-
-                ?>
-            
         </div>
         <div class="col-lg-3 col-s-0"></div>
     </div>
