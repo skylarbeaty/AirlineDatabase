@@ -1,24 +1,17 @@
 <?php
-include_once 'connection.php';
+$dbPort = "3306"
+$dbServername = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "airline";
 
-$sql = "SELECT flight_no FROM flight";
-$result = $conn->query($sql); 
-
-
-if ($result && $result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "flight number:" . $row["flight_no"].  "<br>";
-    }
-} else {
-    echo "No results found";
+$conn = new mysqli($dbPort, $dbServername, $dbUsername, $dbPassword, $dbName);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-
-
-$conn->close();
-
+echo "Connected successfully";
 ?>
-<!DOCTYPE html>
+<html>
 <head>
     <link rel="stylesheet" href="main.css"> 
     <!-- fonts: montserrat, alegreya --> <link href="https://fonts.googleapis.com/css?family=Alegreya|Montserrat|Indie+Flower" rel="stylesheet">
@@ -51,7 +44,7 @@ $conn->close();
         <div class="col-lg-3 col-s-0"></div>
         <div class="col-lg-2">
             <h2 style="padding-top: 50px; padding-bottom: 20px;">Search for a flight</h2>
-            <form >
+            <form action = "select.php" >
                 <label>Flight Number</label><br/>
                 <input type="text"><br/>
                 <label>Departure City</label><br/>
@@ -66,8 +59,31 @@ $conn->close();
             </form>
         </div>
         <div class="col-lg-4">
-            <p style="padding-top: 50px;">Search results will display here.</p>
+            <p style="padding-top: 50px;">Search results will display here. <?php echo date('l, F jS, Y'); ?></p>'
+            
+                <?php
+                    include_once 'connection.php';
+
+                    $sql = "SELECT flight_no FROM flight";
+                    $result = $conn->query($sql); 
+
+
+                    if ($result && $result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            echo "flight number:" . $row["flight_no"].  "<br>";
+                        }
+                    } else {
+                        echo "No results found";
+                    }
+
+
+                    $conn->close();
+
+                ?>
+            
         </div>
         <div class="col-lg-3 col-s-0"></div>
     </div>
 </body>
+</html>
