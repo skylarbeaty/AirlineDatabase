@@ -19,7 +19,7 @@
             </div>
             <div class="table" >
                 <ul>
-                    <li><a href="#"><p class="currentPage">Search</p></a></li>
+                    <li><a href="Search.html"><p>Search</p></a></li>
                     <li><a href="MyAccount.php"><p>My Account</p></a></li>
                     <li><a href="Management.php"><p>Management</p></a></li>
                 </ul>
@@ -37,7 +37,7 @@
             $departure_city = $_POST['departure_city'];
             $destination_city = $_POST['destination_city'];
             $date = $_POST['departure_date'];
-    
+
             $sql = "SELECT * FROM flight WHERE departure_city = '$departure_city' AND destination_city = '$destination_city'";
             $result = $conn->query($sql); 
 

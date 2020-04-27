@@ -22,7 +22,7 @@
             </div>
             <div class="table" >
                 <ul>
-                    <li><a href="Search.php"><p>Search</p></a></li>
+                    <li><a href="Search.html"><p>Search</p></a></li>
                     <li><a href="#"><p class="currentPage">My Account</p></a></li>
                     <li><a href="Management.php"><p>Management</p></a></li>
                 </ul>
