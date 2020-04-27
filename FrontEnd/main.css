@@ -41,6 +41,9 @@ a p:hover{
     color: #ffffff;
     text-decoration: none;
 }
+.currentPage{
+    color: #ffffff;
+}
 label{
     padding-top: 20px;
 }
