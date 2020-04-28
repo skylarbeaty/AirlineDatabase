@@ -27,7 +27,7 @@
         </div>
         <div class="col-lg-3 col-sm-0"></div>
     </div>
-    <div class = "row">
+    <div class = "row" style="padding-top: 20px;">
         <div class="col-lg-3 col-sm-0"></div>
         <div class="col-lg-6">
             <?php
@@ -45,15 +45,12 @@
             if ($result && $result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "flight number:" . $row["flight_no"].  "<br>";
-                    echo "Departure city:" . $row["departure_city"].  "<br>";
-                    echo "Destination city:" . $row["destination_city"].  "<br>";
-                    echo "Departure Time:" . $row["departure_time"].  "<br>";
-                    echo "Arrival Time:" . $row["arrival_time"].  "<br>";
-                    echo "Flight Length" . $row["flight_length"].  "<br>";
-                    echo "Date:" . $row["departure_date"].  "<br>";
-                    echo "Arrival Date" . $row["arrival_date"].  "<br>";
-                    echo "Available Seats:" . $row["empty_seats"].  "<br>";
+                    echo "Flight " . $row["flight_no"] . " " . $row["departure_city"];
+                    echo " to " . $row["destination_city"].  "<br>";
+                    echo "on " . $row["departure_date"] . " at " . $row["departure_time"].  "<br>";
+                    echo "arriving on " . $row["arrival_date"] . " at " . $row["arrival_time"].  "<br>";
+                    echo "Flight Length " . $row["flight_length"].  "<br>";
+                    echo "Available Seats " . $row["empty_seats"].  "<br>";
                     echo "<br>";
                 }
             } else {
