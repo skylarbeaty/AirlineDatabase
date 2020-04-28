@@ -20,7 +20,6 @@
             <div class="table" >
                 <ul>
                     <li><a href="Search.html"><p>Search</p></a></li>
-                    <li><a href="MyAccount.php"><p>My Account</p></a></li>
                     <li><a href="Management.php"><p>Management</p></a></li>
                 </ul>
             </div>
