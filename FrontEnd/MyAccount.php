@@ -33,8 +33,8 @@
     <div class = "row">
         <div class="col-lg-3 col-sm-0"></div>
         <div class="col-lg-6" style="padding-top: 20px;">
-            <p>Name: <br/></p>
-            <p>DOB: <br/></p>
+            <p style="font-size: 1.2em;">Name: <br/></p>
+            <p style="font-size: 1.2em;">DOB: <br/></p>
         </div>
         <div class="col-lg-3 col-sm-0"></div>
     </div>
