@@ -34,7 +34,7 @@
         <div class="col-lg-3 col-sm-0"></div>
         <div class="col-lg-3">
             <h2 style="padding-top: 50px; padding-bottom: 20px;">Add A Flight</h2>
-            <form action="" method="POST">
+            <form action="Insert_flight.php" method="POST">
                 <label>Flight Number</label>
                     <input type="text" name="flight_no"><br/>
                 <label>Desitination City</label> 
@@ -50,7 +50,9 @@
                 <!--<label>Boarding Time</label> 
                     <input type="time" name="boarding_time"><br/>-->
                 <label>Total Passengers</label> 
-                    <input type="number" name="total_passenger"><br/>
+                    <input type="number" name="total_passengers"><br/>
+                <label>Total Seats</label> 
+                    <input type="number" name="total_seats"><br/>
                 <label>Empty Seats</label> 
                     <input type="number" name="empty_seats"><br/>
                 <label>Flight Type</label> 
@@ -59,36 +61,66 @@
                     <input type="number" name="distance"><br/>   
                 <label>Departure Date</label> 
                     <input type="date" name="departure_date"><br/>
-                  <label>Arrival Date</label> 
+                <label>Arrival Date</label> 
                     <input type="date" name="arrival_date"><br/><br/>  
-                <input type="submit">
+                <input type="submit" value="insert">
             </form>
         </div>
         <div class="col-lg-3">
             <h2 style="padding-top: 50px; padding-bottom: 20px;">Remove A Flight</h2>
-            <form action="" method="POST">
+            <form action="remove_flight.php" method="POST">
                 <label>Flight Number</label> <input type="text" name="flight_no"><br/>
-                <input type="submit">
+                <input type="submit" value="remove">
             </form>
-            <?php
-                include_once 'connection.php';
+        </div>
+        <div class="col-lg-3 col-sm-0"></div>
+        <!-- <?php
+        include_once 'connection.php';
 
+        if (isset($_POST['submit'])){
+            switch($_POST['submit']) {
+            case 'insert': 
+                $flight_no = $_POST['flight_no'];
+                $destination_city = $_POST['destination_city'];
+                $departure_city = $_POST['departure_city'];
+                $departure_time = $_POST['departure_time'];
+                $arrival_time = $_POST['arrival_time'];
+                $flight_length = $_POST['flight_length'];
+                //$boarding_time = $_POST['boardingtime'];
+                $total_passengers = $_POST['total_passengers'];
+                $total_seats = $_POST['total_seats'];
+                $empty_seats = $_POST['empty_seats'];
+                $flight_type = $_POST['flight_type'];
+                $distance = $_POST['distance'];
+                $departure_date = $_POST['departure_date'];
+                $arrival_date = $_POST['arrival_date'];
+                
+                
+                $sql = "INSERT INTO flight VALUES ('$flight_no', '$destination_city', '$departure_city', '$departure_time ','$arrival_time', '$flight_length ', '$total_passengers', '$total_seats', '$empty_seats', '$flight_type', '$distance', '$departure_date ', '$arrival_date' )";
+                
+                
+                if ($conn->query($sql) === TRUE) {
+                    echo "New flight inserted successfully";
+                } else {
+                    echo "Error: couldn't insert flight " . $sql . "<br>" . $conn->error;
+                }
+            break;
+            case 'remove':
                 $flight_no = $_POST['flight_no'];
 
 
                 $sql = "DELETE FROM flight WHERE flight_no = '$flight_no'";
-
+                
                 if ($conn->query($sql) === TRUE) {
-                echo "Flight removed successfully!";
+                    echo "Flight removed successfully!";
                 }
                 else {
-                echo "Error removing flight. " . $conn->error;
-                }   
-
-                $conn->close(); 
-            ?>
-        </div>
-        <div class="col-lg-3 col-sm-0"></div>
-
+                    echo "Error removing flight. " . $conn->error;
+                }  
+            break;
+            } 
+        }
+        $conn->close();
+        ?> -->
 </body>
 </html>
