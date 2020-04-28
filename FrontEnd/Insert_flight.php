@@ -7,11 +7,12 @@
     <title>Emu Air</title>
 </head>
 <body>
+    <!-- formatting -->
     <div class = "header row">
         <div class="col-lg-3 col-sm-0"></div>
         <div class="col-lg-6">
             <div class="row" style="padding-left: 15px;">
-            <img src = "emuIcon.png" style = "width: 80px; height: 80px;">
+            <img src = "emu_icon.png" style = "width: 80px; height: 80px;">
                 <div style="display: inline-block; padding-left: 10px;">
                     <h1>Emu Air<br/></h1>
                     <p style="padding-left: 5px;">what would an emu do</p>
@@ -19,8 +20,8 @@
             </div>
             <div class="table" >
                 <ul>
-                    <li><a href="Search.html"><p>Search</p></a></li>
-                    <li><a href="Management.php"><p>Management</p></a></li>
+                    <li><a href="search.html"><p>Search</p></a></li>
+                    <li><a href="management.html"><p>Management</p></a></li>
                 </ul>
             </div>
         </div>
@@ -29,18 +30,17 @@
 
     <div class = "row">
         <div class="col-lg-3 col-sm-0"></div>
-        <div class="col-lg-6">
+        <div class="col-lg-6"> 
+            <!-- php code -->
             <?php
             include_once 'connection.php';
 
-            //if (isset($_POST['submit'])){
             $flight_no = $_POST['flight_no'];
             $destination_city = $_POST['destination_city'];
             $departure_city = $_POST['departure_city'];
             $departure_time = $_POST['departure_time'];
             $arrival_time = $_POST['arrival_time'];
             $flight_length = $_POST['flight_length'];
-            //$boarding_time = $_POST['boardingtime'];
             $total_passengers = $_POST['total_passengers'];
             $total_seats = $_POST['total_seats'];
             $empty_seats = $_POST['empty_seats'];
@@ -49,9 +49,7 @@
             $departure_date = $_POST['departure_date'];
             $arrival_date = $_POST['arrival_date'];
 
-
             $sql = "INSERT INTO flight VALUES ('$flight_no', '$destination_city', '$departure_city', '$departure_time ','$arrival_time', '$flight_length ', '$total_passengers', '$total_seats', '$empty_seats', '$flight_type', '$distance', '$departure_date ', '$arrival_date' )";
-
 
             if ($conn->query($sql) === TRUE) {
                 echo "New flight inserted successfully";
@@ -59,7 +57,6 @@
                 echo "Error: couldn't insert flight " . $sql . "<br>" . $conn->error;
             }
 
-            //}
             $conn->close();
             ?>
         </div>

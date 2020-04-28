@@ -7,11 +7,12 @@
     <title>Emu Air</title>
 </head>
 <body>
+    <!-- formatting -->
     <div class = "header row">
         <div class="col-lg-3 col-sm-0"></div>
         <div class="col-lg-6">
             <div class="row" style="padding-left: 15px;">
-            <img src = "emuIcon.png" style = "width: 80px; height: 80px;">
+            <img src = "emu_icon.png" style = "width: 80px; height: 80px;">
                 <div style="display: inline-block; padding-left: 10px;">
                     <h1>Emu Air<br/></h1>
                     <p style="padding-left: 5px;">what would an emu do</p>
@@ -19,8 +20,8 @@
             </div>
             <div class="table" >
                 <ul>
-                    <li><a href="Search.html"><p>Search</p></a></li>
-                    <li><a href="Management.php"><p>Management</p></a></li>
+                    <li><a href="search.html"><p>Search</p></a></li>
+                    <li><a href="management.html"><p>Management</p></a></li>
                 </ul>
             </div>
         </div>
@@ -29,6 +30,7 @@
     <div class = "row" style="padding-top: 20px;">
         <div class="col-lg-3 col-sm-0"></div>
         <div class="col-lg-6">
+            <!-- php code -->
             <?php
 
             include_once 'connection.php';
