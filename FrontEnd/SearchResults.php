@@ -38,7 +38,7 @@
             $destination_city = $_POST['destination_city'];
             $date = $_POST['departure_date'];
 
-            $sql = "SELECT * FROM flight WHERE departure_city = '$departure_city' AND destination_city = '$destination_city'";
+            $sql = "SELECT * FROM flight WHERE departure_city = '$departure_city' OR destination_city = '$destination_city' OR departure_date= '$date'";
             $result = $conn->query($sql); 
 
 
@@ -46,6 +46,15 @@
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
                     echo "flight number:" . $row["flight_no"].  "<br>";
+                    echo "Departure city:" . $row["departure_city"].  "<br>";
+                    echo "Destination city:" . $row["destination_city"].  "<br>";
+                    echo "Departure Time:" . $row["departure_time"].  "<br>";
+                    echo "Arrival Time:" . $row["arrival_time"].  "<br>";
+                    echo "Flight Length" . $row["flight_length"].  "<br>";
+                    echo "Date:" . $row["departure_date"].  "<br>";
+                    echo "Arrival Date" . $row["arrival_date"].  "<br>";
+                    echo "Available Seats:" . $row["empty_seats"].  "<br>";
+                    echo "<br>";
                 }
             } else {
                 echo "No results found";
